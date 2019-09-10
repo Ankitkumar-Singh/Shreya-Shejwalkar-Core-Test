@@ -8,6 +8,15 @@
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-4 pb-2 mb-3 border-bottom">
         <h2>Candidates List</h2>
     </div>
+    <form asp-action="Index" asp-controller="Candidate" method="post">
+        <div class="row input-group">
+            <input type="text" name="search" id="search" class="form-control"/>
+            <div class="input-group-btn">
+                <input type="submit" value="search" class="btn btn-info"/>
+            </div>
+        </div>
+
+    </form>
     <div class="action">
         <a asp-controller="Candidate" asp-action="SaveCandidateDetails" class="btn btn-info ">Add Candidate</a>
     </div>

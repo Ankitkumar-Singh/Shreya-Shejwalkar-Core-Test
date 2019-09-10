@@ -15,5 +15,7 @@ namespace CandidateQualifications.Repositories
         Candidate DeleteCandidate(int Id);
 
         List<SelectListItem> GetQualificationList();
+
+        List<Candidate> SearchCandidate(string search);
     }
 }

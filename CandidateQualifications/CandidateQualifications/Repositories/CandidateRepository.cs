@@ -77,6 +77,17 @@ namespace CandidateQualifications.Repositories
                 Text = c.Title
             }).ToList();
         }
+        #region "Search"
+        /// <summary>
+        /// Search candidate by its firstname or lastname
+        /// </summary>
+        /// <param name="search"></param>
+        /// <returns></returns>
+        public List<Candidate> SearchCandidate(string search)
+        {
+            return context.Candidate.Where(p => p.FirstName.Contains(search) || p.LastName.Contains(search)).ToList();
+        }
+        #endregion
     }
 }
 
