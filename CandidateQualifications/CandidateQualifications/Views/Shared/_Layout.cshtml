@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/css/Style.css" rel="stylesheet" />
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/jquery.validate.min.js"></script>
+    <script src="~/js/jquery.validate.unobtrusive.min.js"></script>
+    <link href="~/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Candidate Qualification Management</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExample04">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a asp-controller="Home" asp-action="Index" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item ">
+                    <a asp-controller="Candidate" asp-action="Index" class="nav-link">Candidates</a>
+                </li>
+                <li class="nav-item ">
+                    <a asp-controller="Qualification" asp-action="Index" class="nav-link">Qualifications</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-md-0">
+                <input class="form-control" type="text" placeholder="Search">
+            </form>
+        </div>
+    </nav>
+    <!--Sidebar-->
+    <div class="container-fluid">
+          @RenderBody()
+     </div>
+    <!--Footer-->
+    <footer id="footer">
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright . All Rights Reserved
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

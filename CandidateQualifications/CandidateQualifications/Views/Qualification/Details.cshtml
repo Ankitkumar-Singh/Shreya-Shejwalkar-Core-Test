@@ -1,0 +1,27 @@
+﻿@model CandidateQualifications.Models.Qualification
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--Table displaying Qualification Details-->
+<div class="container">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-4 pb-2 mb-3 ">
+        <h2>Qualification Details</h2>
+    </div>
+    <table class="table table-hover">
+        <tr>
+            <td>Qualification</td>
+            <td> @Html.DisplayFor(model => model.Title)</td>
+        </tr>
+        <tr>
+            <td>Passing Year</td>
+            <td> @Html.DisplayFor(model => model.PassingYear)</td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td> @Html.DisplayFor(model => model.Description)</td>
+        </tr>      
+    </table>
+    <a asp-action="Index" class="btn btn-info">Back</a>
+</div>
+
