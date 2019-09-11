@@ -82,6 +82,16 @@ namespace CandidateQualifications.Repositories
             return selectListItems;
         }
         #endregion
+
+        #region "Search"
+        /// <summary>
+        /// Search Qualification by its Title
+        /// </summary>
+        /// <param name="search"></param>
+        /// <returns></returns>
+        public List<Qualification> SearchTitle(string search) => context.Qualification.Where(p => p.Title.StartsWith(search)).ToList();
+         #endregion
     }
-    
+
+
 }

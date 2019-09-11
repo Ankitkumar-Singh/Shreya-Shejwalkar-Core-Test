@@ -6,6 +6,10 @@ namespace CandidateQualifications.Repositories
 {
     public interface IQualificationRepository
     {
+        /// <summary>
+        ///Declaration of methods implemented in its repository
+        /// </summary>
+        /// <returns></returns>
         IEnumerable<Qualification> GetAllQualifications();
         Qualification GetQualificationDetails(int Id);
 
@@ -15,5 +19,6 @@ namespace CandidateQualifications.Repositories
 
         List<SelectListItem> GetPassingYearList();
 
+        List<Qualification> SearchTitle(string search);
     }
 }

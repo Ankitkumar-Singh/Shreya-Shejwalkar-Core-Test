@@ -4,32 +4,40 @@
 }
 
 <!--Displaying list of Qualification-->
-<div class="container">
-    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-4 pb-2 mb-3 border-bottom">
-        <h2>Qualifications List</h2>
-    </div>
-    <div class="action">
-        <a asp-controller="Qualification" asp-action="SaveQualificationDetails" class="btn btn-info ">Add Qualification</a>
-    </div>
-    <table class="table table-hover">
-        <tr>
-            <th>Qualification</th>
-            <th>Passing Year</th>
-            <th>Description</th>
-            <th>Actions</th>
-        </tr>
-        @foreach (var item in Model)
-        {
+    <div class="container">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-4 pb-2 mb-3 border-bottom">
+            <h2>Qualifications List</h2>
+        </div>
+        <form asp-action="Index" asp-controller="Qualification" method="post">
+            <div class="row input-group">
+                <input type="text" name="search" id="search" class="form-control" />
+                <div class="input-group-btn">
+                    <input type="submit" value="Search" class="btn btn-info"/>
+                </div>
+            </div>
+        </form>
+        <div class="action">
+            <a asp-controller="Qualification" asp-action="SaveQualificationDetails" class="btn btn-info ">Add Qualification</a>
+        </div>
+        <table class="table table-hover">
             <tr>
-                <td>@Html.DisplayFor(modelItem => item.Title)</td>
-                <td>@Html.DisplayFor(modelItem => item.PassingYear)</td>
-                <td>@Html.DisplayFor(modelItem => item.Description)</td>
-                <td>
-                    <a asp-controller="Qualification" asp-action="SaveQualificationDetails" asp-route-id="@item.Id" class="btn btn-info">Edit</a>
-                    <a asp-controller="Qualification" asp-action="Details" asp-route-id="@item.Id" class="btn btn-success">View</a>
-                    <a asp-controller="Qualification" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
-                </td>
+                <th>Qualification</th>
+                <th>Passing Year</th>
+                <th>Description</th>
+                <th>Actions</th>
             </tr>
-        }
-    </table>
-</div>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Title)</td>
+                    <td>@Html.DisplayFor(modelItem => item.PassingYear)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                    <td>
+                        <a asp-controller="Qualification" asp-action="SaveQualificationDetails" asp-route-id="@item.Id" class="btn btn-info">Edit</a>
+                        <a asp-controller="Qualification" asp-action="Details" asp-route-id="@item.Id" class="btn btn-success">View</a>
+                        <a asp-controller="Qualification" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>

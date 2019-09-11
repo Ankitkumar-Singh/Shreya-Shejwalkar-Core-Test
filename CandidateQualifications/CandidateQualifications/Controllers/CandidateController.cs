@@ -32,10 +32,7 @@ namespace CandidateQualifications.Controllers
         public ViewResult Index(string search = null) {
 
             if (!string.IsNullOrEmpty(search))
-            {
-                var foundCandidate = _candidateRepository.SearchCandidate(search);
-                return View(foundCandidate);
-            }
+                return View(_candidateRepository.SearchCandidate(search));
             return View(_candidateRepository.GetAllCandidates());
         }
         #endregion

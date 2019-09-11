@@ -6,6 +6,10 @@ namespace CandidateQualifications.Repositories
 {
     public interface ICandidateRepository
     {
+        /// <summary>
+        ///Declaration of methods implemented in its repository
+        /// </summary>
+        /// <returns></returns>
         IEnumerable<Candidate> GetAllCandidates();
 
         Candidate GetCandidateDetails(int Id);

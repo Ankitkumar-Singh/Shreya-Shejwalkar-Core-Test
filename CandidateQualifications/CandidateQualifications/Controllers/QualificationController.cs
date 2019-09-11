@@ -29,7 +29,12 @@ namespace CandidateQualifications.Controllers
         /// </summary>
         /// <returns></returns>
         [Route("Index")]
-        public ViewResult Index()=> View(_qualificationRepository.GetAllQualifications());
+        public ViewResult Index(string search = null)
+        {
+            if (!string.IsNullOrEmpty(search))
+                return View(_qualificationRepository.SearchTitle(search));
+            return View(_qualificationRepository.GetAllQualifications());
+        } 
         #endregion
 
         #region "Details"
